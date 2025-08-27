@@ -3,15 +3,23 @@ import Codea from "./Mycomponeents/Code";
 import "./App.css";
 import Terminal from "./Mycomponeents/Terminal";
 import Topbar from "./Mycomponeents/Topbar";
+import SideNavigate from "./Mycomponeents/SideNavigate";
+import Navbar from "./Mycomponeents/Navbar";
 const App = () => {
   return (
-    <div className="flex items-center flex-col  justify-between p-5">
-      <div>
-        <Topbar />
+    <div className="flex items-center   justify-between h-screen w-full ">
+      <div className="w-[10vw]">
+        <SideNavigate />
       </div>
-      <div className="flex justify-between">
-        <Codea />
-        <Terminal />
+      <div className="flex  justify-between flex-col  w-[100vw] h-[100vh]  ">
+        <div className="top">
+          <Navbar />
+          <Topbar />
+        </div>
+        <div className="bottom flex    ">
+          <Codea />
+          <Terminal />
+        </div>
       </div>
     </div>
   );

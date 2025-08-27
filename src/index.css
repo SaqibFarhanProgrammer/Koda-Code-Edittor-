@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 
 @import 'tw-animate-css';
+@plugin "daisyui";
+
 
 /** Dark Mode Variant **/
 @custom-variant dark (&:is(.dark *));

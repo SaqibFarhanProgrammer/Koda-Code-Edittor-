@@ -3,7 +3,7 @@ import React from 'react'
 const Code = () => {
   return (
     <div>
-        <div className="codearea w-[65vw] h-[87vh] bg-zinc-700 "   >
+        <div className="codearea w-[55vw] h-[100%] bg-zinc-700 "   >
 
         </div>
     
