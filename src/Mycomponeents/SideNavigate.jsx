@@ -1,10 +1,10 @@
 import React from "react";
 import { FaUserCircle, FaCog, FaSignOutAlt, FaFolder, FaFileCode } from "react-icons/fa";
+import { IoCodeSlashOutline } from "react-icons/io5";
 
 const SideNavigate = () => {
   return (
-    <div className="w-[15vw] h-screen bg-zinc-800 text-white flex flex-col">
-      {/* Top Section: Profile and Settings */}
+    <div className="w-[10vw] relative h-[99.5vh] bg-zinc-800 text-white flex flex-col">
       <div className="p-4 border-b border-zinc-700">
         <div className="flex flex-col items-center">
           <FaUserCircle className="text-5xl text-blue-500 mb-2" />
@@ -28,39 +28,19 @@ const SideNavigate = () => {
         </div>
       </div>
 
-      {/* Middle Section: Code/File Navigation */}
-      <div className="p-4 flex-grow overflow-y-auto">
-        <div className="flex items-center gap-3 text-zinc-400 mb-3">
-          <FaFolder className="text-lg" />
-          <span className="text-sm font-semibold uppercase tracking-wider">My Codes</span>
-        </div>
-        <div className="flex flex-col gap-1">
-          <a
+      <div className="p-4 justify-between  overflow-y-auto gap-10 flex-col">
+            <a
             href="#"
-            className="flex items-center gap-3 px-3 py-2 rounded-md bg-zinc-700 text-blue-400 font-medium"
+            className="flex items-center gap-3 p-3 rounded-md hover:bg-zinc-700 transition-colors"
           >
-            <FaFileCode className="text-lg" />
-            <span>script.js</span>
+            <IoCodeSlashOutline className="text-xl" />
+            <span>Codes</span>
           </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-zinc-700 transition-colors"
-          >
-            <FaFileCode className="text-lg" />
-            <span>main.py</span>
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-3 px-3 py-2 rounded-md hover:bg-zinc-700 transition-colors"
-          >
-            <FaFileCode className="text-lg" />
-            <span>styles.css</span>
-          </a>
-        </div>
+   
       </div>
 
       {/* Bottom Section: Branding */}
-      <div className="p-4 border-t border-zinc-700 text-center text-zinc-500 text-xs">
+      <div className="p-4 border-t absolute bottom-0 justify-end items-end border-zinc-700 text-center text-zinc-500 text-xs">
         &copy; 2025 Kodo. All rights reserved.
       </div>
     </div>

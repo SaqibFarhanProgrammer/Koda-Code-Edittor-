@@ -11,12 +11,11 @@ const App = () => {
       <div className="w-[10vw]">
         <SideNavigate />
       </div>
-      <div className="flex  justify-between flex-col  w-[100vw] h-[100vh]  ">
+      <div className="flex  justify-between flex-col bg-amber-700  w-[100vw] h-[100vh]  ">
         <div className="top">
           <Navbar />
-          <Topbar />
         </div>
-        <div className="bottom flex    ">
+        <div className="bottom flex  mb-10  ">
           <Codea />
           <Terminal />
         </div>
