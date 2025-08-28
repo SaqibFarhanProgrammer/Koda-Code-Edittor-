@@ -2,10 +2,10 @@ import React from "react";
 
 const Terminal = () => {
   return (
-    <div className="w-full   h-[91.6vh] flex flex-col bg-zinc-900 border-l border-zinc-700">
+    <div className="w-full   h-[92vh] flex flex-col bg-zinc-900 border-l border-zinc-700">
       {/* Terminal Header */}
-      <div className="bg-zinc-800 p-2 p text-sm text-zinc-400 font-mono flex items-center justify-between border-b border-zinc-700">
-        <span className="text-white ml-2">Output</span>
+      <div className="bg-zinc-800 p-2 text-sm text-zinc-400 font-mono flex items-center justify-between border-b border-zinc-700">
+        <span className="text-white ml-2">Terminal</span>
         <div className="flex gap-2 mr-2">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
           <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>

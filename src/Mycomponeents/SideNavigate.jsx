@@ -4,7 +4,7 @@ import { IoCodeSlashOutline } from "react-icons/io5";
 
 const SideNavigate = () => {
   return (
-    <div className="w-[10vw] relative h-[99.5vh] bg-zinc-800 text-white flex flex-col">
+    <div className="w-[10vw] mb-1 relative h-[99.5vh] bg-zinc-800 text-white flex flex-col">
       <div className="p-4 border-b border-zinc-700">
         <div className="flex flex-col items-center">
           <FaUserCircle className="text-5xl text-blue-500 mb-2" />
