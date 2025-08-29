@@ -1,10 +1,10 @@
 import React from "react";
-import { FaPlay, FaSave } from "react-icons/fa";
+import { FaPlay, FaSave, FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 
 const Topbar = () => {
   return (
-    <div className="w-[55vw] bg-zinc-800 border-b border-zinc-700 shadow-sm">
+    <div className="w-[55vw] bg-zinc-800 border-b border-zinc-700 shadow-sm px-4">
       {/* --- Topbar with Dots + File Dropdown + Actions --- */}
       <div className="h-12 px-4 flex items-center justify-between">
         
@@ -25,23 +25,25 @@ const Topbar = () => {
             >
               Untitled.js ▾
             </label>
+
+            {/* Dropdown content */}
             <ul
               tabIndex={0}
-              className="dropdown-content menu shadow-lg bg-zinc-800 border border-zinc-700 rounded-md w-44 text-sm text-zinc-200"
+              className="dropdown-content menu p-2 shadow bg-zinc-800 border border-zinc-700 rounded w-40 mt-1"
             >
               <li>
-                <a className="hover:bg-zinc-700 hover:text-white transition-all">
-                  ➕ New File
+                <a className="flex items-center gap-2 hover:bg-zinc-700 hover:text-white transition-all rounded px-2 py-1">
+                  <FaPlus /> New File
                 </a>
               </li>
               <li>
-                <a className="hover:bg-zinc-700 hover:text-white transition-all">
-                  ✏️ Rename
+                <a className="flex items-center gap-2 hover:bg-zinc-700 hover:text-white transition-all rounded px-2 py-1">
+                  <FaEdit /> Rename
                 </a>
               </li>
               <li>
-                <a className="hover:bg-zinc-700 hover:text-white transition-all">
-                  🗑️ Delete
+                <a className="flex items-center gap-2 hover:bg-zinc-700 hover:text-white transition-all rounded px-2 py-1">
+                  <FaTrash /> Delete
                 </a>
               </li>
             </ul>

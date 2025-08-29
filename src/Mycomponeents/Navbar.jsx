@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaPlay, FaSave, FaUserCircle, FaCaretDown, FaCog, FaSignOutAlt } from 'react-icons/fa';
+import { RiCodeSSlashFill } from "react-icons/ri";
 
 const TopNavbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -25,23 +26,27 @@ const TopNavbar = () => {
         <div className="relative">
           <button
             onClick={toggleDropdown}
-            className="flex items-center gap-2 px-3 py-2 rounded-md bg-zinc-700 text-zinc-300 hover:bg-zinc-600 transition-colors"
+            className="flex items-center gap-2 px-3 py-2 rounded-md bg-zinc-700 text-zinc-300 hover:bg-zinc-800 transition-colors"
           >
             <FaUserCircle className="text-xl" />
             <FaCaretDown className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
           </button>
 
           {isDropdownOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-zinc-700 rounded-md shadow-lg py-1 z-10">
-              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-600">
+            <div className="absolute overflow-hidden right-0 mt-2 w-48 bg-zinc-900 rounded-md shadow-lg py-1 z-10">
+              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
                 <FaUserCircle />
                 Profile
               </a>
-              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-600">
+              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
+                <RiCodeSSlashFill />
+                Codes
+              </a>
+              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
                 <FaCog />
                 Settings
               </a>
-              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-600">
+              <a href="#" className="flex bg-[#291D21] items-center gap-2 px-4 py-2 text-red-300 hover:text-[#cf444b] ">
                 <FaSignOutAlt />
                 Logout
               </a>
