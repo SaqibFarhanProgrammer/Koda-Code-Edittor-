@@ -1,11 +1,10 @@
-import { useSize } from "radix-ui/internal";
 import { createContext, useState } from "react";
 
-export const context = createContext();
+export const Context = createContext();
 
-export const Provider = ({ children }) => {
+ export const Provider = ({ children }) => {
     const [zoomin, setzoomin] = useState(14);
-    const [zoomout, setzoomout] = useSize(zoomin);
+    const [zoomout, setzoomout] = useState(zoomin);
 
     function funczoomin() {
         setzoomin((prev) => prev + 1);
@@ -24,8 +23,8 @@ export const Provider = ({ children }) => {
     };
 
     return (
-        <context.Provider value={value}>
+        <Context.Provider value={value}>
             {children}
-        </context.Provider>
+        </Context.Provider>
     );
 };

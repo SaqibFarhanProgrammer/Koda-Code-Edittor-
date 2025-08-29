@@ -1,5 +1,5 @@
 import React from "react";
-import Codea from "./Mycomponeents/Code";
+import Code from "./Mycomponeents/Code";
 import "./App.css";
 import Terminal from "./Mycomponeents/Terminal";
 import Topbar from "./Mycomponeents/Topbar";
@@ -16,7 +16,7 @@ const App = () => {
           <Navbar />
         </div>
         <div className="bottom flex  mb-10  ">
-          <Codea />
+          <Code />
           <Terminal />
         </div>
       </div>

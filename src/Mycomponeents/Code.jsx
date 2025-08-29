@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Topbar from "./Topbar";
 import Editor, { useMonaco } from "@monaco-editor/react";
+import { Context } from "../context/context";
 
-const Terminal = () => {
+const Code = () => {
   const monaco = useMonaco();
-  const [zoomin, setzoomin] = useState(14)
-  const [zoomout, setzoomout] = useState(zoomin)
+const {zoomin } = useContext(Context)
+console.log(zoomin);
+
+  
 
   useEffect(() => {
     if (monaco) {
@@ -44,7 +47,6 @@ const Terminal = () => {
       theme="zincDark"
       className="pt-[2px]"
       options={{
-        fontSize: zoomin,
         
       }}
       
@@ -53,4 +55,4 @@ const Terminal = () => {
   );
 };
 
-export default Terminal;
+export default Code;
