@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaPlay, FaSave, FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 
+import { FiPlus } from "react-icons/fi";
+import { FiMinus } from "react-icons/fi";
+import { Context } from "../context/context";
+
 const Topbar = () => {
+  const { funczoomin, funczoomout } = useContext(Context);
   return (
     <div className="w-[55vw] bg-zinc-800 border-b border-zinc-700 shadow-sm px-4">
       {/* --- Topbar with Dots + File Dropdown + Actions --- */}
       <div className="h-12 px-4 flex items-center justify-between">
-        
         {/* Left Side: Dots + File Dropdown */}
         <div className="flex items-center gap-4">
           {/* Mac-style dots */}
@@ -52,6 +56,14 @@ const Topbar = () => {
 
         {/* Right Side: Action Buttons */}
         <div className="flex items-center gap-2">
+          <button onClick={funczoomout} className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2">
+            Zoom-Out
+            <FiMinus size={14} className="mt-[1px]" />
+          </button>
+          <button onClick={funczoomin} className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2">
+            Zoom-in
+            <FiPlus size={14} className="mt-.6" />
+          </button>
           <button className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2">
             <MdContentCopy size={14} /> Copy
           </button>

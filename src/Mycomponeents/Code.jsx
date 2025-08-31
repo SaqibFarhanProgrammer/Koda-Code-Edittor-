@@ -5,10 +5,7 @@ import { Context } from "../context/context";
 
 const Code = () => {
   const monaco = useMonaco();
-const {zoomin } = useContext(Context)
-console.log(zoomin);
-
-  
+  const { zoomin } = useContext(Context);
 
   useEffect(() => {
     if (monaco) {
@@ -34,22 +31,18 @@ console.log(zoomin);
     }
   }, [monaco]);
 
-
-
   return (
     <div className="w-[60%] h-[100%] flex flex-col bg-zinc-900 border-l border-zinc-700">
       <Topbar />
-        
+
       <Editor
-      
-      defaultLanguage="javascript"
-      defaultValue="// Write your code here"
-      theme="zincDark"
-      className="pt-[2px]"
-      options={{
-        
-      }}
-      
+        defaultLanguage="javascript"
+        defaultValue="// Write your code here"
+        theme="zincDark"
+        className="pt-[2px]"
+        options={{
+          fontSize: zoomin,
+        }}
       />
     </div>
   );

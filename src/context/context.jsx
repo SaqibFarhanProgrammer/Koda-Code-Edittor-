@@ -7,10 +7,11 @@ export const Context = createContext();
     const [zoomout, setzoomout] = useState(zoomin);
 
     function funczoomin() {
-        setzoomin((prev) => prev + 1);
+        setzoomin((prev) => prev + 2);
+        
     }
     function funczoomout() {
-        setzoomin((prev) => prev - 1);
+        setzoomin((prev) => prev - 2);
     }
 
     const value = {
