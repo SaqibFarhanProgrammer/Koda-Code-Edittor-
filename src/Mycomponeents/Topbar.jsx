@@ -6,7 +6,7 @@ import { Context } from "../context/context";
 import lenguageicons from "../lenguagesname";
 
 const Topbar = () => {
-  const { funczoomin, funczoomout,Codecompile ,coderun } = useContext(Context);
+  const { funczoomin, funczoomout ,outputformconsole } = useContext(Context);
   const [selected, setSelected] = useState(lenguageicons[0]);
   const [open, setOpen] = useState(false); 
 
@@ -109,7 +109,7 @@ const Topbar = () => {
             <FaSave size={14} /> Save
           </button>
 
-          <button onClick={Codecompile} className="btn btn-xs bg-green-600 border-none text-white hover:bg-green-500 shadow-md gap-2">
+          <button onClick={outputformconsole} className="btn btn-xs bg-green-600 border-none text-white hover:bg-green-500 shadow-md gap-2">
             <FaPlay size={14} /> Run
           </button>
         </div>

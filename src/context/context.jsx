@@ -1,4 +1,4 @@
-import { createContext, useRef, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 export const Context = createContext();
 
@@ -6,9 +6,7 @@ export const Provider = ({ children }) => {
   const [zoomin, setzoomin] = useState(14);
   const [zoomout, setzoomout] = useState(zoomin);
   const [compiledCode, setcompiledCode] = useState(null);
-  const [terminalCode, setterminalCode] = useState("")
-
-  
+  const [output, setoutput] = useState("");
 
   function funczoomin() {
     setzoomin((prev) => prev + 2);
@@ -17,11 +15,26 @@ export const Provider = ({ children }) => {
     setzoomin((prev) => prev - 2);
   }
 
-  function Codecompile() {
-    setterminalCode(compiledCode);
-    
-  }
   
+  function outputformconsole() {
+    const logs = [];
+    const customcode = {
+      log: (...args) => {
+        logs.push(args.join(" "));
+      },
+      error: (...args) => {
+        logs.push("error" + args.join(" "));
+      },
+    };
+
+    try {
+      const func = new Function("console", compiledCode);
+      func(customcode);
+    } catch (error) {
+      logs.push("Runtime Error: " + error.message);
+    }
+    setoutput(logs);
+  }
 
   const value = {
     zoomin,
@@ -30,10 +43,10 @@ export const Provider = ({ children }) => {
     setzoomout,
     funczoomin,
     funczoomout,
-    Codecompile,
     compiledCode,
     setcompiledCode,
-    terminalCode,
+    outputformconsole,
+    output
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

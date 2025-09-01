@@ -2,15 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../context/context";
 
 const Terminal = () => {
-  const [TCode, setTCode] = useState("");
-  const { terminalCode } = useContext(Context);
-  useEffect(() => {
-    setTCode(terminalCode);
-  }, []);
-  
-
-  console.log("render");
-  
+  const { output } = useContext(Context);
 
   return (
     <div className="w-full   h-[92vh] flex flex-col bg-zinc-900 border-l border-zinc-700">
@@ -25,9 +17,8 @@ const Terminal = () => {
       </div>
 
       {/* Terminal Content Area */}
-      <div className="flex-grow p-4 overflow-y-auto text-zinc-300 font-mono text-sm">
-        {TCode}
-        
+      <div className="flex-grow p-4 text-2xl overflow-y-auto text-zinc-300 font-mono ">
+        {output}
       </div>
     </div>
   );
