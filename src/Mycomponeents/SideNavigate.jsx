@@ -5,8 +5,8 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 
 const SideNavigate = () => {
   return (
-    <div className="w-[10vw] mb-1 relative h-[99.5vh] bg-zinc-800 text-white flex flex-col">
-      <div className="p-4 border-b border-zinc-700">
+    <div className="w-[10vw] mb-1 relative h-[99.5vh] bg-[#09090B] text-white flex flex-col">
+      <div className="p-4 border-b border-[#27272A]">
         <div className="flex flex-col items-center cursor-pointer" >
           <IoPersonCircleOutline className="text-5xl  mb-2" />
           <span className="font-semibold text-lg">User Profile</span>
@@ -26,7 +26,7 @@ const SideNavigate = () => {
       </div>
 
       {/* Bottom Section: Branding */}
-      <div className="p-4 border-t absolute bottom-0 justify-end items-end border-zinc-700 text-center text-zinc-500 text-xs">
+      <div className="p-4 border-t absolute bottom-0 justify-end items-end border-[#27272A] text-center text-zinc-500 text-xs">
         <div className="mt-4 flex flex-col gap-2">
           <a
             href="#"

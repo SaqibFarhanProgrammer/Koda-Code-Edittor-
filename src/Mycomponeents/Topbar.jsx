@@ -11,7 +11,7 @@ const Topbar = () => {
   const [open, setOpen] = useState(false); 
 
   return (
-    <div className="w-[55vw] bg-zinc-800 border-b border-zinc-700 shadow-sm px-4">
+    <div className="w-[55vw]  border-b border-[#27272A] shadow-sm px-4">
       <div className="h-12 px-4 flex items-center justify-between">
         {/* ---------------- Left Side ---------------- */}
         <div className="flex items-center gap-4">
@@ -26,27 +26,27 @@ const Topbar = () => {
           <div className="dropdown">
             <label
               tabIndex={0}
-              className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-200 hover:bg-zinc-600 hover:border-zinc-500 hover:text-white transition-all"
+              className="btn btn-xs bg-[#09090B] border border-zinc-600 text-zinc-200 hover:bg-zinc-700 hover:border-zinc-500 hover:text-white transition-all"
             >
               Untitled.js ▾
             </label>
 
             <ul
               tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-zinc-800 border border-zinc-700 rounded w-40 mt-1"
+              className="dropdown-content menu p-2 shadow bg-[#09090B] border border-zinc-700 rounded w-40 mt-1"
             >
               <li>
-                <a className="flex items-center gap-2 hover:bg-zinc-700 hover:text-white transition-all rounded px-2 py-1">
+                <a className="flex items-center gap-2 hover:bg-zinc-900 hover:text-white transition-all rounded px-2 py-1">
                   <FaPlus /> New File
                 </a>
               </li>
               <li>
-                <a className="flex items-center gap-2 hover:bg-zinc-700 hover:text-white transition-all rounded px-2 py-1">
+                <a className="flex items-center gap-2 hover:bg-zinc-900 hover:text-white transition-all rounded px-2 py-1">
                   <FaEdit /> Rename
                 </a>
               </li>
               <li>
-                <a className="flex items-center gap-2 hover:bg-zinc-700 hover:text-white transition-all rounded px-2 py-1">
+                <a className="flex items-center gap-2 hover:bg-zinc-900 hover:text-white transition-all rounded px-2 py-1">
                   <FaTrash /> Delete
                 </a>
               </li>
@@ -57,14 +57,14 @@ const Topbar = () => {
           <div className="relative">
             <button
               onClick={() => setOpen(!open)} // toggle
-              className="btn btn-xs flex items-center gap-2 bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600"
+              className="btn btn-xs flex items-center gap-2 bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700"
             >
               <img src={selected.icon} alt="" className="w-3 h-3" />
               {selected.name} ▾
             </button>
 
             {open && (
-              <ul className="absolute mt-1 bg-zinc-800 border border-zinc-600 rounded shadow z-10 w-36 max-h-120 0 overflow-y-auto">
+              <ul className="absolute dropdown mt-1 bg-[#09090B] border border-zinc-600 rounded shadow z-10 w-36 max-h-120 0 overflow-y-auto">
                 {lenguageicons.map((obj, index) => (
                   <li
                     key={index}
@@ -72,7 +72,7 @@ const Topbar = () => {
                       setSelected(obj);
                       setOpen(false); // close dropdown on select
                     }}
-                    className="flex text-[1vw] items-center gap-2 px-2 py-1 hover:bg-zinc-600 cursor-pointer text-white"
+                    className="flex text-[1vw] items-center gap-2 px-2 py-1 hover:bg-zinc-900 cursor-pointer text-white"
                   >
                     <img src={obj.icon} alt="" className="w-3 h-3" />
                     {obj.name}
@@ -87,7 +87,7 @@ const Topbar = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={funczoomout}
-            className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2"
+            className="btn btn-xs bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700 hover:text-white gap-2"
           >
             Zoom-Out
             <FiMinus size={14} />
@@ -95,17 +95,17 @@ const Topbar = () => {
 
           <button
             onClick={funczoomin}
-            className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2"
+            className="btn btn-xs bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700 hover:text-white gap-2"
           >
             Zoom-In
             <FiPlus size={14} />
           </button>
 
-          <button className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2">
+          <button className="btn btn-xs bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700 hover:text-white gap-2">
             <MdContentCopy size={14} /> Copy
           </button>
 
-          <button className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2">
+          <button className="btn btn-xs bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700 hover:text-white gap-2">
             <FaSave size={14} /> Save
           </button>
 

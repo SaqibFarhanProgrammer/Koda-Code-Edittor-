@@ -10,10 +10,10 @@ const TopNavbar = () => {
   };
 
   return (
-    <div className="w-[100%] h-16 bg-zinc-800 text-white flex items-center justify-between px-6 border-b border-zinc-700">
+    <div className="w-[100%] h-16  text-[#FAFAFA] flex items-center justify-between px-6 border-b border-[#27272A]">
       {/* Left side: Logo and file details */}
       <div className="flex items-center gap-6">
-        <span className="text-xl font-bold text-blue-500">kodo</span>
+        <span className="text-xl font-bold text-white">kodo</span>
 
       </div>
 
@@ -26,7 +26,7 @@ const TopNavbar = () => {
         <div className="relative">
           <button
             onClick={toggleDropdown}
-            className="flex items-center gap-2 px-3 py-2 rounded-md bg-zinc-700 text-zinc-300 hover:bg-zinc-800 transition-colors"
+            className="flex items-center border-1 border-[#27272A] gap-2 px-3 py-2 rounded-md bg-zinc-900 text-zinc-300 hover:bg-zinc-800 transition-colors"
           >
             <FaUserCircle className="text-xl" />
             <FaCaretDown className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`} />
