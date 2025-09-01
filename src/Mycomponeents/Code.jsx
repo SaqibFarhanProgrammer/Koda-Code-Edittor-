@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Topbar from "./Topbar";
 import Editor, { useMonaco } from "@monaco-editor/react";
 import { Context } from "../context/context";
-import lenguageicons from "../lenguagesname"
+import lenguageicons from "../lenguagesname";
 
 const Code = () => {
   const monaco = useMonaco();
-  const { zoomin } = useContext(Context);
-  console.log(lenguageicons);
-  
+  const { zoomin, Codecompile, compiledCode, setcompiledCode } =
+    useContext(Context);
 
   useEffect(() => {
     if (monaco) {
@@ -39,8 +38,11 @@ const Code = () => {
       <Topbar />
 
       <Editor
+        onChange={(value) => {
+          setcompiledCode(value);
+        }}
         defaultLanguage="javascript"
-        defaultValue="// Write your code here"
+        defaultValue={compiledCode}
         theme="zincDark"
         className="pt-[2px]"
         options={{

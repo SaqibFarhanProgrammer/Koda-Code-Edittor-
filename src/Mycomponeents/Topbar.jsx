@@ -6,9 +6,9 @@ import { Context } from "../context/context";
 import lenguageicons from "../lenguagesname";
 
 const Topbar = () => {
-  const { funczoomin, funczoomout } = useContext(Context);
+  const { funczoomin, funczoomout,Codecompile ,coderun } = useContext(Context);
   const [selected, setSelected] = useState(lenguageicons[0]);
-  const [open, setOpen] = useState(false); // ✅ toggle state
+  const [open, setOpen] = useState(false); 
 
   return (
     <div className="w-[55vw] bg-zinc-800 border-b border-zinc-700 shadow-sm px-4">
@@ -59,7 +59,7 @@ const Topbar = () => {
               onClick={() => setOpen(!open)} // toggle
               className="btn btn-xs flex items-center gap-2 bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600"
             >
-              <img src={selected.icon} alt="" className="w-4 h-4" />
+              <img src={selected.icon} alt="" className="w-3 h-3" />
               {selected.name} ▾
             </button>
 
@@ -72,9 +72,9 @@ const Topbar = () => {
                       setSelected(obj);
                       setOpen(false); // close dropdown on select
                     }}
-                    className="flex items-center gap-2 px-2 py-1 hover:bg-zinc-600 cursor-pointer text-white"
+                    className="flex text-[1vw] items-center gap-2 px-2 py-1 hover:bg-zinc-600 cursor-pointer text-white"
                   >
-                    <img src={obj.icon} alt="" className="w-4 h-4" />
+                    <img src={obj.icon} alt="" className="w-3 h-3" />
                     {obj.name}
                   </li>
                 ))}
@@ -109,7 +109,7 @@ const Topbar = () => {
             <FaSave size={14} /> Save
           </button>
 
-          <button className="btn btn-xs bg-green-600 border-none text-white hover:bg-green-500 shadow-md gap-2">
+          <button onClick={Codecompile} className="btn btn-xs bg-green-600 border-none text-white hover:bg-green-500 shadow-md gap-2">
             <FaPlay size={14} /> Run
           </button>
         </div>
