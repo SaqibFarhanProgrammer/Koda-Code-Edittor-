@@ -3,12 +3,13 @@ import { Context } from "../context/context";
 
 const Terminal = () => {
   const { output } = useContext(Context);
+  
 
   return (
     <div className="w-full   h-[92vh] flex flex-col border-l border-[#27272A]">
       {/* Terminal Header */}
       <div className=" p-3.5 text-sm text-zinc-400 font-mono flex items-center justify-between border-b border-[#27272A]">
-        <span className="text-white ml-2">Terminal</span>
+        <span className="text-white ml-2">Output</span>
         <div className="flex gap-2 mr-2">
           <div className="w-3 h-3 bg-red-500 rounded-full"></div>
           <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>

@@ -4,6 +4,8 @@ import { IoCodeSlashOutline } from "react-icons/io5";
 import { IoPersonCircleOutline } from "react-icons/io5";
 
 const SideNavigate = () => {
+  console.log("render");
+  
   return (
     <div className="w-[10vw] mb-1 relative h-[99.5vh] bg-[#09090B] text-white flex flex-col">
       <div className="p-4 border-b border-[#27272A]">

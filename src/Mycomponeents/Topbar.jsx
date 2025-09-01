@@ -6,12 +6,12 @@ import { Context } from "../context/context";
 import lenguageicons from "../lenguagesname";
 
 const Topbar = () => {
-  const { funczoomin, funczoomout ,outputformconsole } = useContext(Context);
+  const { funczoomin, funczoomout ,outputformconsole ,Copy , copied , setcopied } = useContext(Context);
   const [selected, setSelected] = useState(lenguageicons[0]);
   const [open, setOpen] = useState(false); 
 
   return (
-    <div className="w-[55vw]  border-b border-[#27272A] shadow-sm px-4">
+    <div className="w-[55vw]  text-white border-b border-[#27272A] shadow-sm px-4">
       <div className="h-12 px-4 flex items-center justify-between">
         {/* ---------------- Left Side ---------------- */}
         <div className="flex items-center gap-4">
@@ -101,8 +101,11 @@ const Topbar = () => {
             <FiPlus size={14} />
           </button>
 
-          <button className="btn btn-xs bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700 hover:text-white gap-2">
-            <MdContentCopy size={14} /> Copy
+          <button onClick={Copy} className="btn btn-xs bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700 hover:text-white gap-2">
+            <MdContentCopy size={14} />
+            {
+              copied ? "Copied" : "Copy"
+            }
           </button>
 
           <button className="btn btn-xs bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700 hover:text-white gap-2">

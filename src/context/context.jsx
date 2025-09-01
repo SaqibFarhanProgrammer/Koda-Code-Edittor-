@@ -7,15 +7,18 @@ export const Provider = ({ children }) => {
   const [zoomout, setzoomout] = useState(zoomin);
   const [compiledCode, setcompiledCode] = useState(null);
   const [output, setoutput] = useState("");
+  const [copied, setcopied] = useState(false)
 
+  // zoom in function
   function funczoomin() {
     setzoomin((prev) => prev + 2);
   }
+  // zoom out function
   function funczoomout() {
     setzoomin((prev) => prev - 2);
   }
 
-  
+  // compile code function
   function outputformconsole() {
     const logs = [];
     const customcode = {
@@ -36,6 +39,16 @@ export const Provider = ({ children }) => {
     setoutput(logs);
   }
 
+  // copy to clipboard function
+
+  function Copy() {
+    navigator.clipboard.writeText(compiledCode);
+    setcopied(true)
+    setTimeout(() => {
+      setcopied(false)
+    }, 2000);
+  }
+
   const value = {
     zoomin,
     setzoomin,
@@ -46,7 +59,10 @@ export const Provider = ({ children }) => {
     compiledCode,
     setcompiledCode,
     outputformconsole,
-    output
+    output,
+    Copy,
+    copied,
+    setcopied,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
