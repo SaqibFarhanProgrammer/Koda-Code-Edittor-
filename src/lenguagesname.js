@@ -37,6 +37,14 @@ const monacoLanguages = [
   { name: "Fortran", icon: "https://cdn-icons-png.flaticon.com/512/518/518713.png" },
   { name: "MATLAB", icon: "https://cdn-icons-png.flaticon.com/512/518/518713.png" },
   { name: "Erlang", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/erlang/erlang-original.svg" },
-  { name: "Objective-C", icon: "https://cdn-icons-png.flaticon.com/512/518/518713.png" }
+  { name: "Objective-C", icon: "https://cdn-icons-png.flaticon.com/512/518/518713.png" },
+  { name: "F#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fsharp/fsharp-original.svg" },
+  { name: "M", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" }, // Example: M language (F#)
+  { name: "Clojure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/clojure/clojure-original.svg" },
+  { name: "GraphQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg" },
+  { name: "Less", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/less/less-plain-wordmark.svg" },
+  { name: "Sass", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" },
+  { name: "Vim", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-original.svg" },
 ];
+
 export default monacoLanguages;

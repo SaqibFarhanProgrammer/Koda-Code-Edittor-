@@ -1,18 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FaPlay, FaSave, FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
-
-import { FiPlus } from "react-icons/fi";
-import { FiMinus } from "react-icons/fi";
+import { FiPlus, FiMinus } from "react-icons/fi";
 import { Context } from "../context/context";
+import lenguageicons from "../lenguagesname";
 
 const Topbar = () => {
   const { funczoomin, funczoomout } = useContext(Context);
+  const [selected, setSelected] = useState(lenguageicons[0]);
+  const [open, setOpen] = useState(false); // ✅ toggle state
+
   return (
     <div className="w-[55vw] bg-zinc-800 border-b border-zinc-700 shadow-sm px-4">
-      {/* --- Topbar with Dots + File Dropdown + Actions --- */}
       <div className="h-12 px-4 flex items-center justify-between">
-        {/* Left Side: Dots + File Dropdown */}
+        {/* ---------------- Left Side ---------------- */}
         <div className="flex items-center gap-4">
           {/* Mac-style dots */}
           <div className="flex gap-2">
@@ -21,7 +22,7 @@ const Topbar = () => {
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
           </div>
 
-          {/* File dropdown */}
+          {/* File Dropdown */}
           <div className="dropdown">
             <label
               tabIndex={0}
@@ -30,7 +31,6 @@ const Topbar = () => {
               Untitled.js ▾
             </label>
 
-            {/* Dropdown content */}
             <ul
               tabIndex={0}
               className="dropdown-content menu p-2 shadow bg-zinc-800 border border-zinc-700 rounded w-40 mt-1"
@@ -52,18 +52,55 @@ const Topbar = () => {
               </li>
             </ul>
           </div>
+
+          {/* ✅ Custom Dropdown with Scroll */}
+          <div className="relative">
+            <button
+              onClick={() => setOpen(!open)} // toggle
+              className="btn btn-xs flex items-center gap-2 bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600"
+            >
+              <img src={selected.icon} alt="" className="w-4 h-4" />
+              {selected.name} ▾
+            </button>
+
+            {open && (
+              <ul className="absolute mt-1 bg-zinc-800 border border-zinc-600 rounded shadow z-10 w-36 max-h-120 0 overflow-y-auto">
+                {lenguageicons.map((obj, index) => (
+                  <li
+                    key={index}
+                    onClick={() => {
+                      setSelected(obj);
+                      setOpen(false); // close dropdown on select
+                    }}
+                    className="flex items-center gap-2 px-2 py-1 hover:bg-zinc-600 cursor-pointer text-white"
+                  >
+                    <img src={obj.icon} alt="" className="w-4 h-4" />
+                    {obj.name}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
 
-        {/* Right Side: Action Buttons */}
+        {/* ---------------- Right Side ---------------- */}
         <div className="flex items-center gap-2">
-          <button onClick={funczoomout} className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2">
+          <button
+            onClick={funczoomout}
+            className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2"
+          >
             Zoom-Out
-            <FiMinus size={14} className="mt-[1px]" />
+            <FiMinus size={14} />
           </button>
-          <button onClick={funczoomin} className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2">
-            Zoom-in
-            <FiPlus size={14} className="mt-.6" />
+
+          <button
+            onClick={funczoomin}
+            className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2"
+          >
+            Zoom-In
+            <FiPlus size={14} />
           </button>
+
           <button className="btn btn-xs bg-zinc-700 border border-zinc-600 text-zinc-300 hover:bg-zinc-600 hover:text-white gap-2">
             <MdContentCopy size={14} /> Copy
           </button>
