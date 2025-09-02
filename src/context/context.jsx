@@ -9,6 +9,7 @@ export const Provider = ({ children }) => {
   const [output, setoutput] = useState([]);
   const [Copiednotificatio, setCopiednotificatio] = useState(false)
   const [copied, setcopied] = useState(false)
+  const [Newfileisopen, setNewfileisopen] = useState(false)
 
   // zoom in function
   function funczoomin() {
@@ -69,6 +70,9 @@ export const Provider = ({ children }) => {
     setcopied,
     Copiednotificatio,
     setCopiednotificatio
+    ,
+    Newfileisopen,
+    setNewfileisopen
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

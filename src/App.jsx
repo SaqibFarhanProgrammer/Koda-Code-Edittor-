@@ -1,7 +1,9 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useContext } from "react";
 import "./App.css";
+import { Context } from "./context/context";
+import Newfile from "./Mycomponeents/Newfile";
 
-// Lazy loaded components
+
 const Code = React.lazy(() => import("./Mycomponeents/Code"));
 const Terminal = React.lazy(() => import("./Mycomponeents/Terminal"));
 const Topbar = React.lazy(() => import("./Mycomponeents/Topbar"));
@@ -9,8 +11,14 @@ const SideNavigate = React.lazy(() => import("./Mycomponeents/SideNavigate"));
 const Navbar = React.lazy(() => import("./Mycomponeents/Navbar"));
 
 const App = () => {
+  const { Newfileisopen, setNewfileisopen } = useContext(Context);
+
   return (
     <div className="flex items-center overflow-y-hidden bg-[#09090B] justify-between h-screen w-full">
+      {
+        Newfileisopen ? 
+        <Newfile/> : null
+      }
       <div className="w-[10vw]">
         <Suspense fallback={<p>Loading Sidebar...</p>}>
           <SideNavigate />

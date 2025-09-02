@@ -3,7 +3,6 @@ import { Context } from "../context/context";
 
 const Terminal = () => {
   const { output } = useContext(Context);
-  console.log(output);
   
 
   return (

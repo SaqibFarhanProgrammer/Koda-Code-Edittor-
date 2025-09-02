@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaPlay, FaSave, FaUserCircle, FaCaretDown, FaCog, FaSignOutAlt } from 'react-icons/fa';
 import { RiCodeSSlashFill } from "react-icons/ri";
 import logo from "../assets/images/WhatsApp Image 2025-09-02 at 8.24.25 AM.jpeg"
+import { Context } from '../context/context';
 
 const TopNavbar = () => {
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -35,22 +37,22 @@ const TopNavbar = () => {
 
           {isDropdownOpen && (
             <div className="absolute overflow-hidden right-0 mt-2 w-48 bg-zinc-900 rounded-md shadow-lg py-1 z-10">
-              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
+              <li href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
                 <FaUserCircle />
                 Profile
-              </a>
-              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
+              </li>
+              <li href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
                 <RiCodeSSlashFill />
                 Codes
-              </a>
-              <a href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
+              </li>
+              <li href="#" className="flex items-center gap-2 px-4 py-2 text-zinc-300 hover:bg-zinc-800">
                 <FaCog />
                 Settings
-              </a>
-              <a href="#" className="flex bg-[#291D21] items-center gap-2 px-4 py-2 text-red-300 hover:text-[#cf444b] ">
+              </li>
+              <li href="#" className="flex bg-[#291D21] items-center gap-2 px-4 py-2 text-red-300 hover:text-[#cf444b] ">
                 <FaSignOutAlt />
                 Logout
-              </a>
+              </li>
             </div>
           )}
         </div>

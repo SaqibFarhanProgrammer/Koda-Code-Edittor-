@@ -40,35 +40,7 @@ const Topbar = () => {
           </div>
 
           {/* File Dropdown */}
-          <div className="dropdown">
-            <label
-              tabIndex={0}
-              className="btn btn-xs bg-[#09090B] border border-zinc-600 text-zinc-200 hover:bg-zinc-700 hover:border-zinc-500 hover:text-white transition-all"
-            >
-              Untitled.js ▾
-            </label>
-
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu p-2 shadow bg-[#09090B] border border-zinc-700 rounded w-40 mt-1"
-            >
-              <li>
-                <a className="flex items-center gap-2 hover:bg-zinc-900 hover:text-white transition-all rounded px-2 py-1">
-                  <FaPlus /> New File
-                </a>
-              </li>
-              <li>
-                <a className="flex items-center gap-2 hover:bg-zinc-900 hover:text-white transition-all rounded px-2 py-1">
-                  <FaEdit /> Rename
-                </a>
-              </li>
-              <li>
-                <a className="flex items-center gap-2 hover:bg-zinc-900 hover:text-white transition-all rounded px-2 py-1">
-                  <FaTrash /> Delete
-                </a>
-              </li>
-            </ul>
-          </div>
+         
 
           {/* ✅ Custom Dropdown with Scroll */}
           <div className="relative">
