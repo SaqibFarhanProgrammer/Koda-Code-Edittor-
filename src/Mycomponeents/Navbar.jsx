@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaPlay, FaSave, FaUserCircle, FaCaretDown, FaCog, FaSignOutAlt } from 'react-icons/fa';
 import { RiCodeSSlashFill } from "react-icons/ri";
+import logo from "../assets/images/WhatsApp Image 2025-09-02 at 8.24.25 AM.jpeg"
 
 const TopNavbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -13,7 +14,7 @@ const TopNavbar = () => {
     <div className="w-[100%] h-16  text-[#FAFAFA] flex items-center justify-between px-6 border-b border-[#27272A]">
       {/* Left side: Logo and file details */}
       <div className="flex items-center gap-6">
-        <span className="text-xl font-bold text-white">kodo</span>
+        <span className="text-xl font-bold text-white"><img className='mix-blend-screen h-[10vh] object-cover' src={logo} alt="" /></span>
 
       </div>
 
