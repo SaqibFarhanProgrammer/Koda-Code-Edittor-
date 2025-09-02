@@ -11,6 +11,7 @@ const Topbar = () => {
   const [open, setOpen] = useState(false); 
 
   return (
+    
     <div className="w-[55vw]  text-white border-b border-[#27272A] shadow-sm px-4">
       <div className="h-12 px-4 flex items-center justify-between">
         {/* ---------------- Left Side ---------------- */}

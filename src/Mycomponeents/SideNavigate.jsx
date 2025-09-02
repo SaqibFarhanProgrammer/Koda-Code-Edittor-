@@ -17,6 +17,13 @@ const SideNavigate = () => {
       </div>
 
       <div className="p-4 justify-between  overflow-y-auto gap-10 flex-col">
+            <ay
+            href="#"
+            className="flex items-center gap-3 p-3 rounded-md hover:bg-zinc-700 transition-colors"
+          >
+            <IoCodeSlashOutline className="text-xl" />
+            <span>New File</span>
+          </ay>
             <a
             href="#"
             className="flex items-center gap-3 p-3 rounded-md hover:bg-zinc-700 transition-colors"
