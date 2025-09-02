@@ -6,3 +6,7 @@
 .dropdown::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera */
 }
+
+.copied-notigication {
+  transition: top 0.3s ease-in-out;
+}

@@ -6,7 +6,8 @@ export const Provider = ({ children }) => {
   const [zoomin, setzoomin] = useState(14);
   const [zoomout, setzoomout] = useState(zoomin);
   const [compiledCode, setcompiledCode] = useState(null);
-  const [output, setoutput] = useState("");
+  const [output, setoutput] = useState([]);
+  const [Copiednotificatio, setCopiednotificatio] = useState(false)
   const [copied, setcopied] = useState(false)
 
   // zoom in function
@@ -44,8 +45,10 @@ export const Provider = ({ children }) => {
   function Copy() {
     navigator.clipboard.writeText(compiledCode);
     setcopied(true)
+    setCopiednotificatio(true)
     setTimeout(() => {
       setcopied(false)
+      setCopiednotificatio(false)
     }, 2000);
   }
 
@@ -62,7 +65,10 @@ export const Provider = ({ children }) => {
     output,
     Copy,
     copied,
+
     setcopied,
+    Copiednotificatio,
+    setCopiednotificatio
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

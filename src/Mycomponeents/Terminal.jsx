@@ -20,10 +20,11 @@ const Terminal = () => {
       <div className=" p-4 text-2xl overflow-y-auto text-zinc-300 font-mono ">
 
         {output.map((line, index) => (
-          <div key={index} className="mb-2">
+          <div key={index} className={`mb-2 ${line.startsWith("error") ? "text-red-500" : ""}`}>
             {line}
           </div>
         ))}
+        
       </div>
     </div>
   );
