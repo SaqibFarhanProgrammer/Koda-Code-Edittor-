@@ -3,7 +3,6 @@ import { FaPlay, FaSave, FaPlus, FaEdit, FaTrash } from "react-icons/fa";
 import { MdContentCopy } from "react-icons/md";
 import { FiPlus, FiMinus } from "react-icons/fi";
 import { Context } from "../context/context";
-import lenguageicons from "../lenguagesname";
 import { IoCheckmarkDoneCircle } from "react-icons/io5";
 
 const Topbar = () => {
@@ -14,10 +13,7 @@ const Topbar = () => {
     Copy,
     copied,
     Copiednotificatio,
-    setCopiednotificatio,
   } = useContext(Context);
-  const [selected, setSelected] = useState(lenguageicons[0]);
-  const [open, setOpen] = useState(false);
 
   return (
     <div className="w-[55vw]  text-white border-b border-[#27272A] shadow-sm px-4">
@@ -40,36 +36,8 @@ const Topbar = () => {
           </div>
 
           {/* File Dropdown */}
-         
 
           {/* ✅ Custom Dropdown with Scroll */}
-          <div className="relative">
-            <button
-              onClick={() => setOpen(!open)} // toggle
-              className="btn btn-xs flex items-center gap-2 bg-zinc-900 border border-zinc-600 text-zinc-300 hover:bg-zinc-700"
-            >
-              <img src={selected.icon} alt="" className="w-3 h-3" />
-              {selected.name} ▾
-            </button>
-
-            {open && (
-              <ul className="absolute dropdown mt-1 bg-[#09090B] border border-zinc-600 rounded shadow z-10 w-36 max-h-120 0 overflow-y-auto">
-                {lenguageicons.map((obj, index) => (
-                  <li
-                    key={index}
-                    onClick={() => {
-                      setSelected(obj);
-                      setOpen(false); // close dropdown on select
-                    }}
-                    className="flex text-[1vw] items-center gap-2 px-2 py-1 hover:bg-zinc-900 cursor-pointer text-white"
-                  >
-                    <img src={obj.icon} alt="" className="w-3 h-3" />
-                    {obj.name}
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
         </div>
 
         {/* ---------------- Right Side ---------------- */}

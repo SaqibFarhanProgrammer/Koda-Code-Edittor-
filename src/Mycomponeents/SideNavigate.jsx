@@ -10,34 +10,35 @@ import { IoCodeSlashOutline } from "react-icons/io5";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import Newfile from "./Newfile";
 import { Context } from "../context/context";
+import { GoPlus } from "react-icons/go";
 
 const SideNavigate = () => {
   const { setNewfileisopen } = useContext(Context);
 
   return (
     <div className="w-[10vw] mb-1 relative h-[99.5vh] bg-[#09090B] text-white flex flex-col">
-      <div className="p-4 border-b border-[#27272A]">
+      <div className="p-3 border-b border-[#27272A]">
         <div className="flex flex-col items-center cursor-pointer">
           <IoPersonCircleOutline className="text-5xl  mb-2" />
           <span className="font-semibold text-lg">User Profile</span>
         </div>
       </div>
 
-      <div className="p-4 justify-between  overflow-y-auto gap-10 flex-col">
+      <div className="p-3 justify-between  overflow-y-auto gap-10 flex-col">
         <div
-        onClick={()=>setNewfileisopen(true)}
+          onClick={() => setNewfileisopen(true)}
           href="#"
           className="flex items-center gap-3 p-3 rounded-md hover:bg-zinc-700 transition-colors"
         >
-          <IoCodeSlashOutline className="text-xl" />
-          <button >New File</button>
+          <GoPlus className="text-[1vw]" />
+          <p>New File</p>
         </div>
         <a
           href="#"
           className="flex items-center gap-3 p-3 rounded-md hover:bg-zinc-700 transition-colors"
         >
-          <IoCodeSlashOutline className="text-xl" />
-          <span>Codes</span>
+          <IoCodeSlashOutline className="text-[1vw] " />
+          <p>Codes</p>
         </a>
       </div>
 

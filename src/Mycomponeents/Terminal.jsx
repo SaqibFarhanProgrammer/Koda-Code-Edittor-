@@ -3,7 +3,6 @@ import { Context } from "../context/context";
 
 const Terminal = () => {
   const { output } = useContext(Context);
-  
 
   return (
     <div className="w-full   h-[92vh] flex flex-col  border-[#27272A]">
@@ -17,13 +16,14 @@ const Terminal = () => {
       </div>
 
       <div className=" p-4 text-2xl overflow-y-auto text-zinc-300 font-mono ">
-
         {output.map((line, index) => (
-          <div key={index} className={`mb-2 ${line.startsWith("error") ? "text-red-500" : ""}`}>
+          <div
+            key={index}
+            className={`mb-2 ${line.includes("Error") ? "text-red-600" : ""}`}
+          >
             {line}
           </div>
         ))}
-        
       </div>
     </div>
   );
