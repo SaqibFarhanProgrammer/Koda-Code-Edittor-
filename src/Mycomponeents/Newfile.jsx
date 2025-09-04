@@ -45,7 +45,7 @@ const Newfile = () => {
 
         <form onSubmit={handleSubmit(handlenewfileform)}>
           <CardContent>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
               {/* File Name Input */}
               <div>
                 <label className="text-sm text-zinc-300 mb-1 block">
@@ -60,7 +60,7 @@ const Newfile = () => {
 
               {/* Dropdown for file extension */}
               <div>
-                <label className="text-sm text-zinc-300 mb-1 block">
+                <label className="text-sm text-zinc-300 mb-2 block">
                   Extension
                 </label>
                 <div className="dropdown w-full">
@@ -100,7 +100,11 @@ const Newfile = () => {
           </CardContent>
 
           <CardFooter className="flex justify-end">
-            <Button type="submit" className="bg-[#dedede] text-black">
+            <Button
+              onClick={() => setNewfileisopen(false)}
+              type="submit"
+              className="bg-[#dedede] text-black mt-7"
+            >
               Create File
             </Button>
           </CardFooter>

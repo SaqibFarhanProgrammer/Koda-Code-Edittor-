@@ -41,7 +41,7 @@ const Code = () => {
   }, [monaco]);
 
   return (
-    <div className="w-[60%] h-[100%] flex flex-col border-l border-zinc-700">
+    <div className="w-[100%] h-[70%] flex flex-col border-l border-zinc-700">
       <Topbar />
 
       <Editor
