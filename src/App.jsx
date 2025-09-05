@@ -20,7 +20,6 @@ const App = () => {
       </div>
       <div className="right h-[90%] w-[90%] ">
         <Suspense fallback={<p>Loading Main...</p>}>
-          <TopNavbar />
           <Routes>
             <Route path="/" element={((<TopNavbar />), (<Main />))} />
           </Routes>

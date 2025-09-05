@@ -11,19 +11,14 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import Newfile from "./Newfile";
 import { Context } from "../context/context";
 import { GoPlus } from "react-icons/go";
+import SidebarProfie from "./SidebarProfie";
 
 const SideNavigate = () => {
   const { setNewfileisopen } = useContext(Context);
 
   return (
-    <div className="w-[10vw] mb-1 relative h-[99.5vh] bg-[#09090B] text-white flex flex-col">
-      <div className="p-3 border-b border-[#27272A]">
-        <div className="flex flex-col items-center cursor-pointer">
-          <IoPersonCircleOutline className="text-5xl  mb-2" />
-          <span className="font-semibold text-lg">User Profile</span>
-        </div>
-      </div>
-
+    <div className="w-[10vw] border-r-1 border-[#1e1e20] mb-1 relative h-[99.5vh] bg-[#09090B] text-white flex flex-col">
+      <SidebarProfie />
       <div className="p-3 justify-between  overflow-y-auto gap-10 flex-col">
         <div
           onClick={() => setNewfileisopen(true)}
@@ -43,7 +38,7 @@ const SideNavigate = () => {
       </div>
 
       {/* Bottom Section: Branding */}
-      <div className="p-4 border-t absolute bottom-0 justify-end items-end border-[#27272A] text-center text-zinc-500 text-xs">
+      <div className="p-4 border-t w-full absolute bottom-0 justify-end items-end border-[#27272A] text-center text-zinc-500 text-xs">
         <div className="mt-4 flex flex-col gap-2">
           <a
             href="#"

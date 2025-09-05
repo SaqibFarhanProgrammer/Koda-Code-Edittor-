@@ -3,14 +3,15 @@ import { FaFileCode, FaTrash, FaEdit } from "react-icons/fa";
 
 const CodefileCard = () => {
   return (
-    <div className="bg-zinc-900 border border-zinc-700 rounded-xl shadow-md p-4 w-full max-w-md text-white hover:border-zinc-500 transition">
+    <div className=" bg-[#09090B] p-4 white shrink-0 border border-zinc-700 rounded-[5px] shadow-md  w-[20vw] h-[36vh] text-white hover:border-zinc-500 transition">
       {/* File Info */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-3">
-          <FaFileCode className="text-blue-400" size={20} />
           <div>
             <h3 className="font-semibold text-lg">App.js</h3>
-            <p className="text-xs text-zinc-400">JS File</p>
+            <div className="extention">
+              <p className="text-xs text-zinc-400">Javascript File</p>
+            </div>
           </div>
         </div>
         <div className="flex gap-3 text-zinc-400">
@@ -24,7 +25,7 @@ const CodefileCard = () => {
       </div>
 
       {/* Code Preview */}
-      <div className="bg-zinc-800 border border-zinc-700 rounded-lg p-3 text-sm font-mono text-zinc-200 overflow-hidden">
+      <div className=" bg-[#151516] borderrounded-lg p-3 text-sm font-mono text-zinc-200 overflow-hidden">
         <pre className="whitespace-pre-wrap break-words max-h-40 overflow-y-auto">
           {`import React from "react";
 
