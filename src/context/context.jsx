@@ -1,17 +1,24 @@
 import { createContext, useEffect, useRef, useState } from "react";
+import  lenguagesicon from "../lenguagesname"
 
 export const Context = createContext();
 
 export const Provider = ({ children }) => {
   const [zoomin, setzoomin] = useState(14);
   const [zoomout, setzoomout] = useState(zoomin);
-  const [compiledCode, setcompiledCode] = useState(null);
+  const [compiledCode, setcompiledCode] = useState("");
   const [output, setoutput] = useState([]);
   const [Copiednotificatio, setCopiednotificatio] = useState(false);
   const [copied, setcopied] = useState(false);
   const [Newfileisopen, setNewfileisopen] = useState(false);
+  const [Issavefileopen, setIssavefileopen] = useState(false)
+  const [SavefileData, setSavefileData] = useState([])
+  const [selectedLang, setSelectedLang] = useState(lenguagesicon[0]); // default first lang
 
   // zoom in function
+  
+  console.log(SavefileData);
+  
   function funczoomin() {
     setzoomin((prev) => prev + 2);
   }
@@ -20,28 +27,27 @@ export const Provider = ({ children }) => {
     setzoomin((prev) => prev - 2);
   }
 
-  // compile code function
-  function outputformconsole() {
-    const logs = [];
-    const customcode = {
-      log: (...args) => {
-        logs.push(args.join(" "));
-      },
-      error: (...args) => {
-        logs.push("error" + args.join(" "));
-      },
-    };
-
-    try {
+function outputformconsole(language) {
+  const logs = [];
+  try {
+    if (language === "C") {
+      logs.push("Hello, C Language!"); // fake output
+    } else if (language === "Java") {
+      logs.push("Hello, Java!");
+    } else {
+      const customcode = {
+        log: (...args) => logs.push(args.join(" ")),
+        error: (...args) => logs.push("error" + args.join(" ")),
+      };
       const func = new Function("console", compiledCode);
       func(customcode);
-    } catch (error) {
-      logs.push("Runtime Error: " + error.message);
     }
-    setoutput(logs);
+  } catch (error) {
+    logs.push("Runtime Error: " + error.message);
   }
+  setoutput(logs);
+}
 
-  // copy to clipboard function
 
   function Copy() {
     navigator.clipboard.writeText(compiledCode);
@@ -72,7 +78,16 @@ export const Provider = ({ children }) => {
     setCopiednotificatio,
     Newfileisopen,
     setNewfileisopen,
+    Issavefileopen,
+    setIssavefileopen,
+    SavefileData,
+
+    setSavefileData,
+      selectedLang,
+      setSelectedLang
   };
+
+  
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
