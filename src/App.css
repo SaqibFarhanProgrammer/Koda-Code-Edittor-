@@ -37,3 +37,38 @@ body {
     transparent
   );
 }
+
+
+.codecard{
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.codes{
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  mask-image: linear-gradient(
+    to bottom,
+
+    black,
+    black,
+    black,
+    black,
+    black,
+    black,
+    black,  
+    black,  
+    black,  
+    transparent
+  );
+  mask-image: linear-gradient(
+    to top,
+
+    black,
+    black,
+    black,
+    black,
+    black,
+    transparent
+  );
+}
