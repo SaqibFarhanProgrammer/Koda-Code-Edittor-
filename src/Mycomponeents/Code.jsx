@@ -48,7 +48,7 @@ const Code = () => {
   }, [monaco]);
 
   return (
-    <div className="w-[100%] h-[70%] flex flex-col border-l border-zinc-700">
+    <div className="w-[100%] h-[100%] flex flex-col border-l border-zinc-700">
       <Topbar />
 
       <Editor
@@ -56,6 +56,7 @@ const Code = () => {
         language={lang}
         defaultValue={compiledCode}
         theme="zincDark"
+        height="100%"
         className="pt-[2px] mt-1"
         options={{
           fontSize: zoomin,

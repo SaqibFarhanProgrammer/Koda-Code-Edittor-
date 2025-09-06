@@ -1,5 +1,5 @@
 import { createContext, useEffect, useRef, useState } from "react";
-import  lenguagesicon from "../lenguagesname"
+import lenguagesicon from "../lenguagesname";
 
 export const Context = createContext();
 
@@ -11,14 +11,14 @@ export const Provider = ({ children }) => {
   const [Copiednotificatio, setCopiednotificatio] = useState(false);
   const [copied, setcopied] = useState(false);
   const [Newfileisopen, setNewfileisopen] = useState(false);
-  const [Issavefileopen, setIssavefileopen] = useState(false)
-  const [SavefileData, setSavefileData] = useState([])
+  const [Issavefileopen, setIssavefileopen] = useState(false);
+  const [SavefileData, setSavefileData] = useState([]);
   const [selectedLang, setSelectedLang] = useState(lenguagesicon[0]); // default first lang
 
   // zoom in function
-  
+
   console.log(SavefileData);
-  
+
   function funczoomin() {
     setzoomin((prev) => prev + 2);
   }
@@ -27,27 +27,24 @@ export const Provider = ({ children }) => {
     setzoomin((prev) => prev - 2);
   }
 
-function outputformconsole(language) {
-  const logs = [];
-  try {
-    if (language === "C") {
-      logs.push("Hello, C Language!"); // fake output
-    } else if (language === "Java") {
-      logs.push("Hello, Java!");
-    } else {
-      const customcode = {
-        log: (...args) => logs.push(args.join(" ")),
-        error: (...args) => logs.push("error" + args.join(" ")),
-      };
+  function outputformconsole() {
+    const logs = [];
+    const customcode = {
+      log: (...args) => {
+        logs.push(args.join(" "));
+      },
+      error: (...args) => {
+        logs.push("error" + args.join(" "));
+      },
+    };
+    try {
       const func = new Function("console", compiledCode);
       func(customcode);
+    } catch (error) {
+      logs.push("Runtime Error: " + error.message);
     }
-  } catch (error) {
-    logs.push("Runtime Error: " + error.message);
+    setoutput(logs);
   }
-  setoutput(logs);
-}
-
 
   function Copy() {
     navigator.clipboard.writeText(compiledCode);
@@ -83,11 +80,9 @@ function outputformconsole(language) {
     SavefileData,
 
     setSavefileData,
-      selectedLang,
-      setSelectedLang
+    selectedLang,
+    setSelectedLang,
   };
-
-  
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
