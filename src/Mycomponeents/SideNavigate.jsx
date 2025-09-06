@@ -17,7 +17,7 @@ const SideNavigate = () => {
   const { setNewfileisopen } = useContext(Context);
 
   return (
-    <div className="w-[10vw] fixed border-r-1 border-[#1e1e20] mb-1 relative h-[99.5vh] bg-[#09090B] text-white flex flex-col">
+    <div className="w-[10vw] fixed border-r-1 border-[#1e1e20] mb-1  h-[99.5vh] bg-[#09090B] text-white flex flex-col">
       <SidebarProfie />
       <div className="p-3 justify-between  overflow-y-auto gap-10 flex-col">
         <a

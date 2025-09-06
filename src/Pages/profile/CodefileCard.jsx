@@ -1,7 +1,8 @@
 import React from "react";
 import { FaTrash, FaEdit } from "react-icons/fa";
+import { Context } from "../../context/context";
 
-const CodefileCard = () => {
+const CodefileCard = ({ title, code, extention }) => {
   return (
     <div
       className="bg-[#0d0d0f] p-5 border border-zinc-800 rounded-xl  
@@ -11,8 +12,12 @@ const CodefileCard = () => {
       {/* File Info */}
       <div className="flex items-center justify-between mb-4">
         <div>
-          <h3 className="font-semibold text-lg text-white">App.js</h3>
-          <p className="text-xs text-zinc-400">Javascript File</p>
+          <h3 className="font-semibold text-lg text-white">
+            {title + "." + extention}
+          </h3>
+          <p className="text-xs text-zinc-400">
+            {extention.charAt(0).toUpperCase() + extention.slice(1)} File
+          </p>
         </div>
         <div className="flex gap-3 text-zinc-400">
           <button className="hover:text-green-400 transition">
@@ -26,15 +31,7 @@ const CodefileCard = () => {
 
       {/* Code Preview */}
       <div className="bg-[#151516] codecard rounded-lg p-3 text-sm font-mono text-zinc-200">
-        <pre className="whitespace-pre-wrap break-words">
-          {`import React from "react";
-
-function App() {
-  return <h1>Hello World</h1>;
-}
-
-export default App;`}
-        </pre>
+        <pre className="whitespace-pre-wrap break-words">{code}</pre>
       </div>
     </div>
   );

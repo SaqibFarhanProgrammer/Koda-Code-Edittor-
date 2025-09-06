@@ -1,5 +1,4 @@
 import { createContext, useEffect, useRef, useState } from "react";
-import lenguagesicon from "../lenguagesname";
 
 export const Context = createContext();
 
@@ -13,11 +12,10 @@ export const Provider = ({ children }) => {
   const [Newfileisopen, setNewfileisopen] = useState(false);
   const [Issavefileopen, setIssavefileopen] = useState(false);
   const [SavefileData, setSavefileData] = useState([]);
-  const [selectedLang, setSelectedLang] = useState(lenguagesicon[0]); // default first lang
-
-  // zoom in function
 
   console.log(SavefileData);
+
+  // zoom in function
 
   function funczoomin() {
     setzoomin((prev) => prev + 2);
@@ -80,8 +78,6 @@ export const Provider = ({ children }) => {
     SavefileData,
 
     setSavefileData,
-    selectedLang,
-    setSelectedLang,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

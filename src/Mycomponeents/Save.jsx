@@ -16,7 +16,6 @@ function Save() {
   const {
     setIssavefileopen,
     setSavefileData,
-    selectedLang,
 
     compiledCode,
   } = useContext(Context);
@@ -28,7 +27,7 @@ function Save() {
       {
         title: e.title,
         code: compiledCode,
-        extention: selectedLang,
+        extention: "javascript",
       },
     ]);
     setIssavefileopen(false);
