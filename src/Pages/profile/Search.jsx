@@ -14,15 +14,8 @@ const SearchBar = () => {
           placeholder="Search files..."
           className="pl-9 pr-10 bg-[#151516] border border-zinc-700 text-white placeholder:text-zinc-500"
         />
-        <Button
-          size="icon"
-          variant="ghost"
-          className="absolute right-1 top-1 h-7 w-7 text-zinc-400 hover:text-red-500"
-        >
-          <X className="h-4 w-4" />
-        </Button>
       </div>
-      <Button className="bg-green-600 hover:bg-green-500 text-white px-6">
+      <Button className="bg-white  hover:bg-zinc-300 text-black px-6">
         Search
       </Button>
     </div>

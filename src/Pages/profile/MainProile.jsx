@@ -8,15 +8,14 @@ import { Context } from "../../context/context";
 const Mainprofile = () => {
   const { SavefileData } = useContext(Context);
   return (
-    <div className="p-1 h-[130vh] w-[100%]   flex flex-col pt-16 justify-start  items-start">
-      <div className="profile  w-[100%] h-[50vh] ">
+    <div className="p-1 h-[110vh]  w-[100%]   m-0 flex flex-col pt-16 justify-between  items-start">
+      <div className="profile  mt-[-9vh]  w-[100%] h-[60vh] ">
         <Profile />
       </div>
+      <div className="search mx-auto">
+        <SearchBar />
+      </div>
       <div className="files">
-        <div className="search">
-          <SearchBar />
-        </div>
-
         <div
           className="codes mx-auto   w-[88vw] px-4 pb-6 
         grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4

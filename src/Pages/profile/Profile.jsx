@@ -1,4 +1,5 @@
 import React from "react";
+import { RiCodeSSlashFill } from "react-icons/ri";
 
 const Profile = () => {
   const user = {
@@ -11,39 +12,31 @@ const Profile = () => {
       "https://i.pinimg.com/736x/7b/51/55/7b5155f9cbe20b84f0f4236cce3d78b4.jpg",
   };
 
-  const handleLogout = () => {
-    alert("Logged out successfully!");
-  };
-
   return (
-    <div className="w-full mx-auto mt-[-5vw] bg-[#0d0d0f] text-white rounded-lg shadow-lg overflow-hidden">
+    <div className="w-full h-[100%]  flex flex-col justify-center items-center mx-auto  text-white rounded-lg  overflow-hidden">
       {/* Cover Section */}
       <div
-        className="h-48 w-full bg-cover bg-center relative"
+        className="h-56 w-full bg-cover bg-center relative flex items-center"
         style={{ backgroundImage: `url(${user.cover})` }}
-      >
-        <button className="absolute top-3 right-3 bg-zinc-900/70 text-sm px-3 py-1 rounded hover:bg-zinc-800 transition">
-          Edit Profile
-        </button>
-      </div>
+      ></div>
 
       {/* Profile Info Section */}
-      <div className="relative px-6 pb-6">
+      <div className="relative px-6 pb-6 ju flex flex-col justify-center items-center">
         {/* Avatar */}
-        <div className="flex items-end gap-4 -mt-12">
+        <div className="flex flex-col  items-center gap-4 mb-5 mt-[-2vw]">
           <img
             src={user.avatar}
             alt="User Avatar"
             className="w-24 h-24 rounded-lg border-4 border-[#0d0d0f] shadow-md object-cover"
           />
           <div>
-            <h2 className="text-2xl font-bold">{user.name}</h2>
-            <p className="text-zinc-400">{user.username}</p>
+            <h2 className="text-2xl text-center font-bold">{user.name}</h2>
+            <p className="text-zinc-400 text-center">{user.username}</p>
           </div>
         </div>
 
         {/* Bio */}
-        <div className="mt-4">
+        <div className=" text-center">
           <p className="text-sm text-zinc-300">{user.description}</p>
           <p className="text-sm text-zinc-500 mt-1">{user.email}</p>
         </div>
@@ -51,8 +44,8 @@ const Profile = () => {
         {/* Logout Button */}
         <div className="mt-6">
           <button
-            onClick={handleLogout}
-            className="bg-red-600 hover:bg-red-700 text-white py-2 px-6 rounded-lg transition"
+            href="#"
+            className="flex bg-[#291D21] items-center gap-2 px-4 py-2 text-red-300 hover:text-[#e4767b] "
           >
             Logout
           </button>
