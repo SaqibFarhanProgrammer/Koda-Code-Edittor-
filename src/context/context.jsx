@@ -12,6 +12,7 @@ export const Provider = ({ children }) => {
   const [Newfileisopen, setNewfileisopen] = useState(false);
   const [Issavefileopen, setIssavefileopen] = useState(false);
   const [SavefileData, setSavefileData] = useState([]);
+  const [isloginscreenopen, setisloginscreenopen] = useState(false);
 
   console.log(SavefileData);
 
@@ -78,6 +79,8 @@ export const Provider = ({ children }) => {
     SavefileData,
 
     setSavefileData,
+    isloginscreenopen,
+    setisloginscreenopen,
   };
 
   return <Context.Provider value={value}>{children}</Context.Provider>;

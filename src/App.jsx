@@ -34,7 +34,7 @@ const App = () => {
           <Suspense fallback={<p>Loading Page...</p>}>
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/codes" element={<Mainprofile />} />
+              <Route path="/profile" element={<Mainprofile />} />
             </Routes>
           </Suspense>
         </div>

@@ -12,6 +12,7 @@ import Newfile from "./Newfile";
 import { Context } from "../context/context";
 import { GoPlus } from "react-icons/go";
 import SidebarProfie from "./SidebarProfie";
+import { Link } from "react-router-dom";
 
 const SideNavigate = () => {
   const { setNewfileisopen } = useContext(Context);
@@ -20,13 +21,13 @@ const SideNavigate = () => {
     <div className="w-[10vw] fixed border-r-1 border-[#1e1e20] mb-1  h-[99.5vh] bg-[#09090B] text-white flex flex-col">
       <SidebarProfie />
       <div className="p-3 justify-between  overflow-y-auto gap-10 flex-col">
-        <a
-          href="#"
+        <Link
+          to="/profile"
           className="flex items-center gap-3 p-3 rounded-md hover:bg-zinc-700 transition-colors"
         >
           <IoCodeSlashOutline className="text-[1vw] " />
           <p>Profile</p>
-        </a>
+        </Link>
         <div
           onClick={() => setNewfileisopen(true)}
           href="#"

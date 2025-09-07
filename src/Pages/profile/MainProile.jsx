@@ -4,17 +4,25 @@ import SearchBar from "../profile/Search";
 import Profile from "../profile/Profile";
 import { useContext } from "react";
 import { Context } from "../../context/context";
+import Loginscreen from "../../Auth/LoginScreen";
 
 const Mainprofile = () => {
-  const { SavefileData } = useContext(Context);
+  const { SavefileData, isloginscreenopen, setisloginscreenopen } =
+    useContext(Context);
   return (
     <div className="p-1 h-[110vh]  w-[100%]   m-0 flex flex-col pt-16 justify-between  items-start">
-      <div className="profile  mt-[-9vh]  w-[100%] h-[60vh] ">
-        <Profile />
-      </div>
-      <div className="search mx-auto">
-        <SearchBar />
-      </div>
+      {isloginscreenopen ? (
+        <>
+          <div className="profile  mt-[-9vh]  w-[100%] h-[60vh] ">
+            <Profile />
+          </div>
+          <div className="search mx-auto">
+            <SearchBar />
+          </div>
+        </>
+      ) : (
+        <Loginscreen />
+      )}
       <div className="files">
         <div
           className="codes mx-auto   w-[88vw] px-4 pb-6 
